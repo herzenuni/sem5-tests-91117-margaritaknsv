@@ -10,34 +10,34 @@ def dictn(keys, values):
         return result
 
 
-print(dictn([1,2,3],[a,b,c,d]))
-
+print(dictn([1, 2, 3], ['a', 'b', 'c']))
 
 if __name__ == '__main__':
     import unittest
 
-    class TestFactorialMethods(unittest.TestCase):
 
+    class TestFactorialMethods(unittest.TestCase):
         def test_list(self):
-            self.assertEqual(dictn([1,2,3],[a,b,c]),{1: a, 2: b, 3: c})
-            self.assertEqual(dictn([1,2,3,4],[a,b,c]),{1: a, 2: b, 3: c, 4: None})
+            self.assertEqual(dictn([1, 2, 3], ['a', 'b', 'c']), {1: 'a', 2: 'b', 3: 'c'})
+            self.assertEqual(dictn([1, 2, 3, 4], ['a', 'b', 'c']), {1: 'a', 2: 'b', 3: 'c', 4: None})
 
         def test_float(self):
-            self.assertTrue(dictn(1,1) is None)
-            self.assertTrue(dictn(2,[2]) is None)
+            self.assertTrue(dictn(1.12, 1.12) is None)
+            self.assertTrue(dictn([2.2], [2.3]), {2.2 : 2.3})
 
         def test_bool(self):
-            self.assertIsNone(dictn(False,True), None)
+            self.assertIsNone(dictn(False, True), None)
 
         def test_negative(self):
-            self.assertEqual(dictn(-1,-2), None)
-            self.assertEqual(dictn(-10,-100), None)
+            self.assertEqual(dictn(-1, -2), None)
+            self.assertEqual(dictn(-10, -100), None)
 
         def test_iter(self):
-            self.assertIs(dictn('bad','good'), None )
-   
-    unitest.main(verbosity=2)
-    
-    """
+            self.assertIs(dictn('bad', 'good'), None)
+
+
+    unittest.main(verbosity=2)
+
+
 assert dictionary([1,2,3],[a,b,c]) == {1: a, 2: b, 3: c}, ('False')
 assert dictionary([1,2,3,4],[a,b,c,d,e]) == {1: a, 2: b, 3: c, 4: d, None: e}, ('False')
