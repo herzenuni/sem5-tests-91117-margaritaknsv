@@ -36,4 +36,8 @@ if __name__ == '__main__':
         def test_iter(self):
             self.assertIs(dictn('bad','good'), None )
    
-    uni.main(verbosity=2)
+    unitest.main(verbosity=2)
+    
+    """
+assert dictionary([1,2,3],[a,b,c]) == {1: a, 2: b, 3: c}, ('False')
+assert dictionary([1,2,3,4],[a,b,c,d,e]) == {1: a, 2: b, 3: c, 4: d, None: e}, ('False')
